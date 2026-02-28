@@ -1,14 +1,936 @@
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
-    <script src="https://cdn.form.io/js/formio.embed.js"></script>
-  </head>
-  <body>
-    <div id="formio"></div>
-    <script type="text/javascript">
-      Formio.createForm(document.getElementById('formio'), 'https://examples.form.io/example');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEOLAF — Cognitive Infrastructure for the Dual-Brain Era</title>
+    <meta name="description" content="NEOLAF builds persistent AI companion infrastructure for education and enterprise. From single-brain to dual-brain: human + AI, growing together.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --bg2: #111118;
+            --bg3: #1a1a24;
+            --accent: #4f8cff;
+            --accent2: #7b61ff;
+            --accent-glow: rgba(79, 140, 255, 0.15);
+            --text: #e8e8ed;
+            --text2: #9a9ab0;
+            --text3: #6a6a80;
+            --border: #2a2a3a;
+            --card-bg: rgba(255,255,255,0.03);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 24px;
+            z-index: 100;
+            display: flex;
+            gap: 0;
+            background: var(--bg3);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+        .lang-btn {
+            padding: 8px 16px;
+            font-size: 13px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            color: var(--text2);
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+        .lang-btn.active {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        /* Dual language blocks */
+        .cn { display: none; }
+        body.zh .en { display: none; }
+        body.zh .cn { display: block; }
+        body.zh span.en { display: none; }
+        body.zh span.cn { display: inline; }
+        span.cn { display: none; }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 90;
+            padding: 16px 40px;
+            background: rgba(10,10,15,0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--accent);
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text2);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text); }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 24px 80px;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse 60% 50% at 50% 40%, var(--accent-glow), transparent);
+            pointer-events: none;
+        }
+        .hero-label {
+            font-size: 13px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+            max-width: 800px;
+            margin-bottom: 24px;
+        }
+        .hero h1 em {
+            font-style: normal;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-sub {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text2);
+            max-width: 600px;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        .hero-cta {
+            display: inline-block;
+            padding: 14px 36px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(79,140,255,0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        section > h2 {
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 600;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        section > p.lead {
+            font-size: 1.05rem;
+            color: var(--text2);
+            max-width: 700px;
+            margin-bottom: 48px;
+            font-weight: 300;
+        }
+
+        /* Cards Grid */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px 28px;
+            transition: border-color 0.3s, transform 0.2s;
+        }
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        .card-icon {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+        .card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text2);
+            line-height: 1.6;
+        }
+
+        /* Comparison Table */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 32px;
+        }
+        .compare-table th, .compare-table td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        .compare-table th {
+            color: var(--text3);
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .compare-table td:first-child {
+            color: var(--text2);
+        }
+        .compare-table td:last-child {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Pillars */
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .pillar {
+            text-align: center;
+            padding: 40px 24px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+        .pillar-num {
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
+        }
+        .pillar h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .pillar p {
+            font-size: 0.85rem;
+            color: var(--text2);
+        }
+
+        /* Tech Architecture */
+        .arch-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 40px 0;
+            font-size: 0.95rem;
+        }
+        .arch-node {
+            padding: 12px 24px;
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-weight: 500;
+        }
+        .arch-arrow {
+            color: var(--accent);
+            font-size: 20px;
+        }
+
+        /* Standards */
+        .standards-list {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+        .std-badge {
+            padding: 10px 24px;
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 24px;
+            border-top: 1px solid var(--border);
+            color: var(--text3);
+            font-size: 0.85rem;
+        }
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: var(--border);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav { padding: 14px 16px; }
+            .nav-links { display: none; }
+            .pillars { grid-template-columns: 1fr; }
+            section { padding: 60px 16px; }
+            .arch-flow { flex-direction: column; }
+            .lang-toggle { top: 14px; right: 14px; }
+        }
+
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('zh')">中文</button>
+    </div>
+
+    <!-- Nav -->
+    <nav>
+        <div class="logo">NEOLAF</div>
+        <ul class="nav-links">
+            <li><a href="#shift"><span class="en">The Shift</span><span class="cn">范式转变</span></a></li>
+            <li><a href="#product"><span class="en">Product</span><span class="cn">产品</span></a></li>
+            <li><a href="#kstar"><span class="en">KSTAR</span><span class="cn">KSTAR</span></a></li>
+            <li><a href="#agentic"><span class="en">Agentic Engineering</span><span class="cn">智能体工程</span></a></li>
+            <li><a href="#standards"><span class="en">Standards</span><span class="cn">标准</span></a></li>
+            <li><a href="#contact"><span class="en">Contact</span><span class="cn">联系</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-label">
+            <span class="en">Cognitive Infrastructure for Education & Enterprise</span>
+            <span class="cn">面向教育与企业的认知基础设施</span>
+        </div>
+        <h1>
+            <span class="en">From Single-Brain to <em>Dual-Brain</em></span>
+            <span class="cn">从单脑时代到<em>双脑时代</em></span>
+        </h1>
+        <p class="hero-sub">
+            <span class="en">NEOLAF builds persistent AI companion infrastructure — where one human brain + one AI brain grow together through shared memory, creating a cognitive partnership more capable than either alone.</span>
+            <span class="cn">NEOLAF 构建持久化的 AI 伴侣基础设施——一个人脑 + 一个 AI 脑，通过共享记忆共同成长，形成超越任何一方的认知伙伴关系。</span>
+        </p>
+        <a class="hero-cta" href="#shift">
+            <span class="en">Learn More</span>
+            <span class="cn">了解更多</span>
+        </a>
+    </header>
+
+    <!-- The Shift -->
+    <section id="shift" class="fade-in">
+        <div class="section-label">
+            <span class="en">The Paradigm Shift</span>
+            <span class="cn">范式转变</span>
+        </div>
+        <h2>
+            <span class="en">AI makes correct answers free. The scarce resource is now judgment.</span>
+            <span class="cn">AI 让正确答案变得免费。稀缺资源变成了判断力。</span>
+        </h2>
+        <p class="lead">
+            <span class="en">For 150 years, education and enterprise optimized for what humans can memorize and recall. AI has commoditized that. What remains scarce: judgment, question framing, orchestration, and continuous learning.</span>
+            <span class="cn">150年来，教育和企业一直在优化人类的记忆与回忆能力。AI 已将其商品化。真正稀缺的是：判断力、问题构建、流程编排和持续学习能力。</span>
+        </p>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">🧠</div>
+                <h3>
+                    <span class="en">Single-Brain Era</span>
+                    <span class="cn">单脑时代</span>
+                </h3>
+                <p>
+                    <span class="en">Knowledge locked in one head. Learning = memorize, recall, test. Value = what you know. Scaling = more people.</span>
+                    <span class="cn">知识锁在一个脑袋里。学习 = 记忆、回忆、考试。价值 = 你知道什么。扩展 = 更多人力。</span>
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤝</div>
+                <h3>
+                    <span class="en">Dual-Brain Era</span>
+                    <span class="cn">双脑时代</span>
+                </h3>
+                <p>
+                    <span class="en">Human + AI companion that grows with you. Learning = collaborate, produce, reflect. Value = what you can do. Scaling = agent leverage.</span>
+                    <span class="cn">人类 + 与你共同成长的 AI 伴侣。学习 = 协作、产出、反思。价值 = 你能做什么。扩展 = 智能体杠杆。</span>
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>
+                    <span class="en">The Phase Transition</span>
+                    <span class="cn">相变时刻</span>
+                </h3>
+                <p>
+                    <span class="en">Not an upgrade — a recomposition. Like horses to automobiles: a change in the fundamental mechanism, not an optimization of the old one.</span>
+                    <span class="cn">不是升级——是重组。如同从马车到汽车：根本机制的改变，而非旧模式的优化。</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Product -->
+    <section id="product" class="fade-in">
+        <div class="section-label">
+            <span class="en">The Product</span>
+            <span class="cn">产品体系</span>
+        </div>
+        <h2>
+            <span class="en">Replace lecture → homework → exam</span>
+            <span class="cn">替代 授课 → 作业 → 考试</span>
+        </h2>
+        <p class="lead">
+            <span class="en">NEOLAF replaces the industrial-era learning model with three pillars designed for the dual-brain era.</span>
+            <span class="cn">NEOLAF 用三大支柱替代工业时代的教学模式，为双脑时代而设计。</span>
+        </p>
+
+        <div class="pillars">
+            <div class="pillar">
+                <div class="pillar-num">1</div>
+                <h3>
+                    <span class="en">Personalized Learning</span>
+                    <span class="cn">个性化学习</span>
+                </h3>
+                <p>
+                    <span class="en">AI companion adapts to each learner through Socratic dialogue — not passive content delivery.</span>
+                    <span class="cn">AI 伴侣通过苏格拉底式对话适配每位学习者——而非被动内容推送。</span>
+                </p>
+            </div>
+            <div class="pillar">
+                <div class="pillar-num">2</div>
+                <h3>
+                    <span class="en">Practice & Production</span>
+                    <span class="cn">实践与产出</span>
+                </h3>
+                <p>
+                    <span class="en">Students produce real work artifacts using AI as collaborator. Capability is built through doing.</span>
+                    <span class="cn">学生以 AI 为协作者产出真实工作成果。能力在实践中构建。</span>
+                </p>
+            </div>
+            <div class="pillar">
+                <div class="pillar-num">3</div>
+                <h3>
+                    <span class="en">Reflection & Growth</span>
+                    <span class="cn">反思与成长</span>
+                </h3>
+                <p>
+                    <span class="en">Structured after-action review turns experience into expertise. Portfolio replaces transcript.</span>
+                    <span class="cn">结构化复盘将经验转化为专长。作品集替代成绩单。</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- KSTAR -->
+    <section id="kstar" class="fade-in">
+        <div class="section-label">
+            <span class="en">Core Architecture</span>
+            <span class="cn">核心架构</span>
+        </div>
+        <h2>
+            <span class="en">KSTAR: The Cognitive Engine</span>
+            <span class="cn">KSTAR：认知引擎</span>
+        </h2>
+        <p class="lead">
+            <span class="en">A neuro-symbolic cognitive architecture that gives every AI companion persistent memory and a self-improving learning loop.</span>
+            <span class="cn">一种神经符号认知架构，赋予每个 AI 伴侣持久记忆和自我改进的学习循环。</span>
+        </p>
+
+        <div class="arch-flow">
+            <div class="arch-node"><strong>K</strong><br><span class="en">Knowledge</span><span class="cn">知识</span></div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node"><strong>S</strong><br><span class="en">Situation</span><span class="cn">情境</span></div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node"><strong>T</strong><br><span class="en">Task</span><span class="cn">任务</span></div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node"><strong>A</strong><br><span class="en">Action</span><span class="cn">行动</span></div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node"><strong>R</strong><br><span class="en">Result</span><span class="cn">结果</span></div>
+            <div class="arch-arrow">→ Δ →</div>
+            <div class="arch-node"><span class="en">Update K</span><span class="cn">更新知识</span></div>
+        </div>
+
+        <div class="cards" style="margin-top: 40px;">
+            <div class="card">
+                <h3>
+                    <span class="en">Persistent Memory</span>
+                    <span class="cn">持久记忆</span>
+                </h3>
+                <p>
+                    <span class="en">Every interaction is structured and retained. Knowledge compounds across sessions, semesters, and careers.</span>
+                    <span class="cn">每次交互都被结构化保留。知识在会话、学期和职业生涯中持续积累。</span>
+                </p>
+            </div>
+            <div class="card">
+                <h3>
+                    <span class="en">Neuro-Symbolic</span>
+                    <span class="cn">神经符号融合</span>
+                </h3>
+                <p>
+                    <span class="en">Combines LLM fluency with symbolic precision. Creative problem-solving meets rigorous validation.</span>
+                    <span class="cn">融合大模型的流畅性与符号系统的精确性。创造性解决问题与严格验证并存。</span>
+                </p>
+            </div>
+            <div class="card">
+                <h3>
+                    <span class="en">Self-Improving Loop</span>
+                    <span class="cn">自我改进循环</span>
+                </h3>
+                <p>
+                    <span class="en">The agent learns from the mismatch between predicted and actual confidence — self-supervised, always on.</span>
+                    <span class="cn">智能体从预测置信度与实际置信度的偏差中学习——自监督，持续运行。</span>
+                </p>
+            </div>
+        </div>
+
+        <table class="compare-table" style="margin-top: 48px;">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>
+                        <span class="en">ChatGPT / Generic AI</span>
+                        <span class="cn">ChatGPT / 通用 AI</span>
+                    </th>
+                    <th>NEOLAF + KSTAR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="en">Memory</span><span class="cn">记忆</span></td>
+                    <td><span class="en">Stateless (per session)</span><span class="cn">无状态（按会话）</span></td>
+                    <td><span class="en">Persistent (longitudinal)</span><span class="cn">持久化（纵向）</span></td>
+                </tr>
+                <tr>
+                    <td><span class="en">Architecture</span><span class="cn">架构</span></td>
+                    <td><span class="en">Purely neural</span><span class="cn">纯神经网络</span></td>
+                    <td><span class="en">Neuro-symbolic</span><span class="cn">神经符号融合</span></td>
+                </tr>
+                <tr>
+                    <td><span class="en">Scope</span><span class="cn">范围</span></td>
+                    <td><span class="en">Individual sessions</span><span class="cn">单次会话</span></td>
+                    <td><span class="en">Individual + institutional</span><span class="cn">个人 + 机构</span></td>
+                </tr>
+                <tr>
+                    <td><span class="en">Role</span><span class="cn">角色</span></td>
+                    <td><span class="en">Tool</span><span class="cn">工具</span></td>
+                    <td><span class="en">Cognitive partner</span><span class="cn">认知伙伴</span></td>
+                </tr>
+                <tr>
+                    <td><span class="en">Learning</span><span class="cn">学习</span></td>
+                    <td><span class="en">None (frozen after training)</span><span class="cn">无（训练后冻结）</span></td>
+                    <td><span class="en">Continuous (KSTAR delta)</span><span class="cn">持续改进（KSTAR 增量）</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Agentic Engineering -->
+    <section id="agentic" class="fade-in">
+        <div class="section-label">
+            <span class="en">Agentic Engineering</span>
+            <span class="cn">智能体工程</span>
+        </div>
+        <h2>
+            <span class="en">From code to cognition. The software stack is recomposing.</span>
+            <span class="cn">从代码到认知。软件栈正在重组。</span>
+        </h2>
+        <p class="lead">
+            <span class="en">When generating a tool costs less than finding one, the entire logic of application-centric software inverts. NEOLAF provides the architecture for this transition.</span>
+            <span class="cn">当生成工具的成本低于寻找工具的成本时，以应用为中心的软件逻辑将全面反转。NEOLAF 为这一转型提供架构支撑。</span>
+        </p>
+
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">🔄</div>
+                <h3>
+                    <span class="en">Skills Replace Apps</span>
+                    <span class="cn">技能替代应用</span>
+                </h3>
+                <p>
+                    <span class="en">Composable, versioned, dependency-aware capability units. The new atomic unit of software.</span>
+                    <span class="cn">可组合、可版本化、感知依赖的能力单元。软件的新原子单位。</span>
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>
+                    <span class="en">Intent Over Syntax</span>
+                    <span class="cn">意图优先于语法</span>
+                </h3>
+                <p>
+                    <span class="en">The human directs; the agent translates intent into action. Judgment replaces coding as the core competency.</span>
+                    <span class="cn">人类指引方向，智能体将意图转化为行动。判断力取代编码成为核心能力。</span>
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🧩</div>
+                <h3>
+                    <span class="en">Five Capability Atoms</span>
+                    <span class="cn">五种能力原子</span>
+                </h3>
+                <p>
+                    <span class="en">Sensor, Actuator, Skill, Context, Authorization — all agentic systems compose from these five primitives.</span>
+                    <span class="cn">感知器、执行器、技能、上下文、授权——所有智能体系统由这五种原语组合而成。</span>
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚙️</div>
+                <h3>
+                    <span class="en">Action Realization Law</span>
+                    <span class="cn">行动实现定律</span>
+                </h3>
+                <p>
+                    <span class="en">Realized Action = Plan ⊗ Token ⊗ Energy. An action plan without authorization is just a wish.</span>
+                    <span class="cn">实现的行动 = 计划 ⊗ 令牌 ⊗ 能量。没有授权的行动计划只是一个愿望。</span>
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏗️</div>
+                <h3>
+                    <span class="en">New Engineering Stack</span>
+                    <span class="cn">新工程栈</span>
+                </h3>
+                <p>
+                    <span class="en">Semantic → Planning → Capability → Authorization → Execution. The UI is optional; the interface is primary.</span>
+                    <span class="cn">语义层 → 规划层 → 能力层 → 授权层 → 执行层。UI 可选；接口为先。</span>
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📐</div>
+                <h3>
+                    <span class="en">Functorism</span>
+                    <span class="cn">函子主义</span>
+                </h3>
+                <p>
+                    <span class="en">Understanding = structure-preserving transformation. Agents transfer patterns across domains, not just match symbols.</span>
+                    <span class="cn">理解 = 保结构变换。智能体跨领域迁移模式，而非简单匹配符号。</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Standards -->
+    <section id="standards" class="fade-in">
+        <div class="section-label">
+            <span class="en">Standards & Interoperability</span>
+            <span class="cn">标准与互操作</span>
+        </div>
+        <h2>
+            <span class="en">IEEE standards for the agent era</span>
+            <span class="cn">智能体时代的 IEEE 标准</span>
+        </h2>
+        <p class="lead">
+            <span class="en">NEOLAF leads the development of open standards for agent communication, learning records, and knowledge representation.</span>
+            <span class="cn">NEOLAF 引领智能体通信、学习记录和知识表示的开放标准制定。</span>
+        </p>
+        <div class="standards-list">
+            <div class="std-badge">IEEE P3394 — UMF</div>
+            <div class="std-badge">IEEE P3428</div>
+            <div class="std-badge">IEEE P2807.6</div>
+        </div>
+        <div class="cards" style="margin-top: 32px;">
+            <div class="card">
+                <h3>
+                    <span class="en">Universal Message Format</span>
+                    <span class="cn">通用消息格式</span>
+                </h3>
+                <p>
+                    <span class="en">IEEE P3394 enables agent-to-agent interoperability across any channel: MCP, HTTP, Slack, WeChat, WebSocket.</span>
+                    <span class="cn">IEEE P3394 实现跨任意通道的智能体互操作：MCP、HTTP、Slack、微信、WebSocket。</span>
+                </p>
+            </div>
+            <div class="card">
+                <h3>
+                    <span class="en">The Agent Unix Pipe</span>
+                    <span class="cn">智能体的 Unix 管道</span>
+                </h3>
+                <p>
+                    <span class="en">Every module only needs to understand UMF. Arbitrary composition becomes possible — the agent equivalent of the Unix pipe.</span>
+                    <span class="cn">每个模块只需理解 UMF。任意组合成为可能——相当于智能体世界的 Unix 管道。</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Why NEOLAF -->
+    <section id="why" class="fade-in">
+        <div class="section-label">
+            <span class="en">Why NEOLAF</span>
+            <span class="cn">为什么选择 NEOLAF</span>
+        </div>
+        <h2>
+            <span class="en">Six layers of defensibility</span>
+            <span class="cn">六层竞争壁垒</span>
+        </h2>
+        <div class="cards" style="margin-top: 32px;">
+            <div class="card">
+                <h3>
+                    <span class="en">Persistent Cognitive Memory</span>
+                    <span class="cn">持久认知记忆</span>
+                </h3>
+                <p>
+                    <span class="en">KSTAR accumulates knowledge that compounds with every interaction — at individual and institutional level.</span>
+                    <span class="cn">KSTAR 积累的知识随每次交互复合增长——覆盖个人和机构层面。</span>
+                </p>
+            </div>
+            <div class="card">
+                <h3>
+                    <span class="en">Institutional Embedding</span>
+                    <span class="cn">机构级深度嵌入</span>
+                </h3>
+                <p>
+                    <span class="en">Deep integration with university workflows creates high switching costs and long-term partnerships.</span>
+                    <span class="cn">与高校工作流的深度集成创造高转换成本和长期合作关系。</span>
+                </p>
+            </div>
+            <div class="card">
+                <h3>
+                    <span class="en">Pedagogical Integration</span>
+                    <span class="cn">教学法整合</span>
+                </h3>
+                <p>
+                    <span class="en">Years of domain expertise in learning science, instructional design, and AI-augmented pedagogy.</span>
+                    <span class="cn">多年学习科学、教学设计和 AI 增强教学法领域的积累。</span>
+                </p>
+            </div>
+            <div class="card">
+                <h3>
+                    <span class="en">Standards Leadership</span>
+                    <span class="cn">标准引领</span>
+                </h3>
+                <p>
+                    <span class="en">Shaping IEEE standards for agent communication and educational technology interoperability.</span>
+                    <span class="cn">主导 IEEE 智能体通信和教育技术互操作标准的制定。</span>
+                </p>
+            </div>
+            <div class="card">
+                <h3>
+                    <span class="en">Portfolio as New Transcript</span>
+                    <span class="cn">作品集即新成绩单</span>
+                </h3>
+                <p>
+                    <span class="en">Verified capability portfolios replace traditional transcripts as employers adopt new talent signals.</span>
+                    <span class="cn">经验证的能力作品集取代传统成绩单，成为雇主认可的新人才信号。</span>
+                </p>
+            </div>
+            <div class="card">
+                <h3>
+                    <span class="en">Compounding Knowledge</span>
+                    <span class="cn">知识复利</span>
+                </h3>
+                <p>
+                    <span class="en">Each institution's deployment enriches the platform. The data moat grows more valuable with every cohort.</span>
+                    <span class="cn">每个机构的部署丰富平台。数据护城河随每届学生变得更有价值。</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Symbiotic Intelligence -->
+    <section class="fade-in">
+        <div class="section-label">
+            <span class="en">The Vision</span>
+            <span class="cn">愿景</span>
+        </div>
+        <h2>
+            <span class="en">Symbiotic Intelligence</span>
+            <span class="cn">共生智能</span>
+        </h2>
+        <p class="lead">
+            <span class="en">The future of intelligence is not AI replacing humans. It is one biological brain + one AI brain, coordinated by shared memory, growing together.</span>
+            <span class="cn">智能的未来不是 AI 取代人类。而是一个生物大脑 + 一个 AI 大脑，通过共享记忆协同合作，共同成长。</span>
+        </p>
+        <div class="cards">
+            <div class="card">
+                <h3>
+                    <span class="en">Human Provides</span>
+                    <span class="cn">人类提供</span>
+                </h3>
+                <p>
+                    <span class="en">Intent, values, judgment, taste, domain expertise, and the questions worth asking.</span>
+                    <span class="cn">意图、价值观、判断力、品味、领域专长，以及值得提出的问题。</span>
+                </p>
+            </div>
+            <div class="card">
+                <h3>
+                    <span class="en">Agent Provides</span>
+                    <span class="cn">智能体提供</span>
+                </h3>
+                <p>
+                    <span class="en">Retrieval, planning, execution, scaling, and tireless consistency.</span>
+                    <span class="cn">检索、规划、执行、扩展，以及不知疲倦的一致性。</span>
+                </p>
+            </div>
+            <div class="card">
+                <h3>
+                    <span class="en">Together</span>
+                    <span class="cn">协同效应</span>
+                </h3>
+                <p>
+                    <span class="en">A cognitive partnership more capable than either alone. Knowledge that compounds over a lifetime.</span>
+                    <span class="cn">超越任何一方的认知伙伴关系。跨越一生持续积累的知识。</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Contact -->
+    <section id="contact" class="fade-in" style="text-align: center;">
+        <div class="section-label">
+            <span class="en">Get in Touch</span>
+            <span class="cn">联系我们</span>
+        </div>
+        <h2>
+            <span class="en">Building the cognitive infrastructure layer</span>
+            <span class="cn">构建认知基础设施层</span>
+        </h2>
+        <p class="lead" style="margin: 16px auto 32px;">
+            <span class="en">NEOLAF is building the cognitive infrastructure layer between humans and AI — in education, enterprise, and beyond.</span>
+            <span class="cn">NEOLAF 正在构建人与 AI 之间的认知基础设施层——覆盖教育、企业及更广泛的领域。</span>
+        </p>
+        <p style="color: var(--text2); font-size: 0.95rem;">
+            Richard Tong&nbsp;&nbsp;|&nbsp;&nbsp;Founder & CEO&nbsp;&nbsp;|&nbsp;&nbsp;<a href="mailto:richard.tong@ieee.org" style="color: var(--accent);">richard.tong@ieee.org</a>
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 NEOLAF, Inc. &nbsp;|&nbsp; <a href="https://www.neolaf.com">www.neolaf.com</a></p>
+        <p style="margin-top: 8px; font-size: 0.75rem; color: var(--text3);">
+            <span class="en">Cognitive Infrastructure for the Dual-Brain Era</span>
+            <span class="cn">双脑时代的认知基础设施</span>
+        </p>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            document.body.className = lang === 'zh' ? 'zh' : '';
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active',
+                    (lang === 'zh' && btn.textContent === '中文') ||
+                    (lang === 'en' && btn.textContent === 'EN')
+                );
+            });
+            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+        }
+
+        // Fade-in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Auto-detect language
+        if (navigator.language && navigator.language.startsWith('zh')) {
+            setLang('zh');
+        }
     </script>
-  </body>
+</body>
 </html>
