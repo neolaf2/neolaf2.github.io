@@ -1,0 +1,52 @@
+{
+  "status": "Position paper for committee discussion",
+  "source": "AISC Q3 2026 Four-Level Framework",
+  "as_of": "2026-09",
+  "levels": [
+    {
+      "name": "Interoperate",
+      "question": "Can I connect?",
+      "description": "Open interfaces connect agents, tools and services across models, vendors and ecosystems.",
+      "keywords": "Interfaces · Identity · Discovery · Sessions",
+      "projects": [
+        "P3394",
+        "P3931",
+        "P3971",
+        "P4154"
+      ]
+    },
+    {
+      "name": "Understand",
+      "question": "Can we understand each other?",
+      "description": "Shared semantics let systems exchange meaning, context and intent—not just messages.",
+      "keywords": "Ontologies · Context · Capabilities · Knowledge",
+      "projects": [
+        "P3123",
+        "P3427",
+        "P3428"
+      ]
+    },
+    {
+      "name": "Trust",
+      "question": "Can I rely on you?",
+      "description": "Evaluation, evidence and clear responsibility make AI behavior verifiable and accountable.",
+      "keywords": "Evaluation · Safety · Provenance · Evidence",
+      "projects": [
+        "P3396",
+        "P3419",
+        "P7018",
+        "P4213"
+      ]
+    },
+    {
+      "name": "Govern",
+      "question": "Who is ultimately in control?",
+      "description": "People and institutions retain authority over knowledge, identity, policies, skills, memory and decisions.",
+      "keywords": "Portability · Oversight · Accountability · Choice",
+      "projects": [
+        "2863",
+        "P4211"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "slug": "seoul-summit",
+    "title": "AISC AI Standards Summit",
+    "date": "2026-11-03",
+    "start": "09:00",
+    "end": "13:00",
+    "timezone": "Asia/Seoul",
+    "city": "Seoul, Republic of Korea",
+    "room": "Daisy Room, 5th floor",
+    "venue_note": "Room reservation confirmed by TTA. Building address and final agenda to be announced.",
+    "provenance": {
+      "authority": "Organizer confirmation supplied by Richard Tong",
+      "status": "Room reservation confirmed"
+    }
+  }
+]

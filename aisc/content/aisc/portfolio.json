@@ -1,0 +1,610 @@
+[
+  {
+    "id": "P3394",
+    "title": "Standard for Large Language Model Agent Interface",
+    "level": "Interoperate",
+    "topic": "Agents",
+    "status": "Ongoing project",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P2961",
+    "title": "Guide for an Architectural Framework and Application for Collaborative Edge Computing",
+    "level": "Interoperate",
+    "topic": "Edge & Physical AI",
+    "status": "Ongoing project",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P3396",
+    "title": "Recommended Practice for Defining and Evaluating Artificial Intelligence (AI) Risk, Safety, Trustworthiness, and Responsibility",
+    "level": "Trust",
+    "topic": "Trust & Evaluation",
+    "status": "Ongoing project",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P3427",
+    "title": "Standard for Federated Machine Learning of Semantic Information Agents",
+    "level": "Understand",
+    "topic": "Semantics",
+    "status": "Ongoing project",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P3395",
+    "title": "Standard for the Implementation of Safeguards, Controls, and Preventive Techniques for Artificial Intelligence (AI) Models",
+    "level": "Trust",
+    "topic": "Trust & Evaluation",
+    "status": "Ongoing project",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P3428",
+    "title": "Standard for Large Language Model Agents for AI-powered Education",
+    "level": "Understand",
+    "topic": "Education",
+    "status": "Ongoing project",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P3419",
+    "title": "Standard for Large Language Model Evaluation",
+    "level": "Trust",
+    "topic": "Trust & Evaluation",
+    "status": "Ongoing project",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P3426",
+    "title": "Standard for Defining and Measuring the Capabilities of AI Foundation Models",
+    "level": "Trust",
+    "topic": "Trust & Evaluation",
+    "status": "Ongoing project",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P3514",
+    "title": "Recommended Practice for Levels of Artificial Intelligence Capabilities for AI Entities and Applications",
+    "level": "Trust",
+    "topic": "Trust & Evaluation",
+    "status": "Ongoing project",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P3123",
+    "title": "Standard for Artificial Intelligence and Machine Learning (AI/ML) Terminology and Data Formats",
+    "level": "Understand",
+    "topic": "Semantics",
+    "status": "Ongoing project",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P7018",
+    "title": "Standard for Security and Trustworthiness Requirements in Generative Pretrained Artificial Intelligence (AI) Models",
+    "level": "Trust",
+    "topic": "GenAI",
+    "status": "Ongoing project",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P3430",
+    "title": "Recommended Practice for a Holistic Framework for AI Foundation Models",
+    "level": "Understand",
+    "topic": "GenAI",
+    "status": "Ongoing project",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P3511",
+    "title": "Standard for Risk Management Guidelines for Generative Artificial Intelligence Systems",
+    "level": "Trust",
+    "topic": "GenAI",
+    "status": "Ongoing project",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P3142",
+    "title": "Standard on Distributed Training and Inference for Large-scale Deep Learning Models",
+    "level": "Interoperate",
+    "topic": "Edge & Physical AI",
+    "status": "Ongoing project",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P3193",
+    "title": "Standard on Large-scale Pre-trained Deep Learning Model Application Framework",
+    "level": "Interoperate",
+    "topic": "GenAI",
+    "status": "Ongoing project",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P3347",
+    "title": "Standard for Description Schemas for Neural Network Architectures",
+    "level": "Understand",
+    "topic": "Semantics",
+    "status": "Ongoing project",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P3931",
+    "title": "Standard for Agent Description, Discovery, and Registry (ADDR) Interoperability",
+    "level": "Interoperate",
+    "topic": "Agents",
+    "status": "Newly approved PAR",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P3971",
+    "title": "Standard for Interoperability Specification for Scientific Intelligent Agent Systems",
+    "level": "Interoperate",
+    "topic": "Agents",
+    "status": "Newly approved PAR",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P3933",
+    "title": "Standard for Capability Requirements of Artificial Intelligence Agents for Materials Research",
+    "level": "Understand",
+    "topic": "Agents",
+    "status": "Newly approved PAR",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P4501",
+    "title": "Standard for Framework and Requirements of Physical Artificial Intelligence in Manufacturing",
+    "level": "Interoperate",
+    "topic": "Edge & Physical AI",
+    "status": "Newly approved PAR",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P3936",
+    "title": "Standard for Technical Requirements of Audio Large Language Models",
+    "level": "Understand",
+    "topic": "GenAI",
+    "status": "Newly approved PAR",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P3952",
+    "title": "Standard for Technical Requirements for Large-Scale Models in International Logistics Supply Chain",
+    "level": "Understand",
+    "topic": "GenAI",
+    "status": "Newly approved PAR",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P4154",
+    "title": "Standard for Application Programming Interfaces for Cross-Platform Artificial Intelligence Model Deployment on Edge Devices",
+    "level": "Interoperate",
+    "topic": "Edge & Physical AI",
+    "status": "Newly approved PAR",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P7804",
+    "title": "Recommended Practice for Integrated Agentic Food Waste Management Process In Schools",
+    "level": "Understand",
+    "topic": "Education",
+    "status": "Newly approved PAR",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P4211",
+    "title": "Standard for Operational Lifecycle Management and Governance of Generative Artificial Intelligence Systems",
+    "level": "Govern",
+    "topic": "Governance",
+    "status": "Under review",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P4213",
+    "title": "Standard for Observability of Artificial Intelligence Systems",
+    "level": "Trust",
+    "topic": "Trust & Evaluation",
+    "status": "Under review",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P4182",
+    "title": "Standard for Federated Machine Learning Application in Trusted Data Space",
+    "level": "Understand",
+    "topic": "Semantics",
+    "status": "Under review",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P4165",
+    "title": "Standard for Evaluation Methods of Agriculture Large Language Models",
+    "level": "Trust",
+    "topic": "Trust & Evaluation",
+    "status": "Under review",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P4166",
+    "title": "Standard for Data Requirements of Agriculture Large Language Models",
+    "level": "Understand",
+    "topic": "GenAI",
+    "status": "Under review",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P4126",
+    "title": "Standard for Specification for Evaluation of Artificial Intelligence World Models",
+    "level": "Trust",
+    "topic": "Trust & Evaluation",
+    "status": "Under review",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "P7032",
+    "title": "Standard for Conversational Artificial Intelligence (AI) Safety",
+    "level": "Trust",
+    "topic": "Trust & Evaluation",
+    "status": "Under review",
+    "type": "project",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/active-pars/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "3559-2026",
+    "title": "IEEE Standard for Technical Requirements for Multimodal Large Language Models in Smart Home Applications",
+    "level": "Understand",
+    "topic": "GenAI",
+    "status": "Published / approved",
+    "type": "standard",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/standards/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "2863",
+    "title": "IEEE Approved Draft Recommended Practice for Organizational Governance of Artificial Intelligence",
+    "level": "Govern",
+    "topic": "Governance",
+    "status": "Approved draft",
+    "type": "standard",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/standards/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "3482",
+    "title": "IEEE Draft Standard for Technical Requirements for Modeling and Control of Three Dimensional Digital Human Based on Machine Learning Models",
+    "level": "Understand",
+    "topic": "GenAI",
+    "status": "Draft / approval reported",
+    "type": "standard",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/standards/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "3549",
+    "title": "IEEE Approved Draft Standard for Inference Optimization Systems of Large Language Models",
+    "level": "Interoperate",
+    "topic": "GenAI",
+    "status": "Approved draft",
+    "type": "standard",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/standards/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "3458",
+    "title": "IEEE Approved Draft Standard for Domain-Specific Large Language Model Management Platforms",
+    "level": "Interoperate",
+    "topic": "GenAI",
+    "status": "Approved draft",
+    "type": "standard",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/standards/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "7015",
+    "title": "IEEE Approved Draft Standard for Data and Artificial Intelligence (AI) Literacy, Skills, and Readiness",
+    "level": "Understand",
+    "topic": "Education",
+    "status": "Approved draft",
+    "type": "standard",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/standards/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  },
+  {
+    "id": "2874-2025",
+    "title": "IEEE Approved Draft Standard for Spatial Web Protocol, Architecture and Governance",
+    "level": "Interoperate",
+    "topic": "Agents",
+    "status": "Approved draft",
+    "type": "standard",
+    "provenance": {
+      "authority": "AISC liaison report",
+      "source": "Liaison Report for ISO/IEC JTC 1/SC 42",
+      "as_of": "2026-09-09",
+      "canonical_url": "https://sagroups.ieee.org/ai-sc/standards/",
+      "verification": "Report snapshot; live IEEE catalog not verified",
+      "mapping": "Illustrative editorial placement, not a formal IEEE classification"
+    }
+  }
+]

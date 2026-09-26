@@ -1,0 +1,100 @@
+[
+  {
+    "slug": "agents",
+    "title": "Agentic AI & interoperability",
+    "description": "From individual models to collaborating systems of agents, tools, services, people and organizations.",
+    "projects": [
+      "P3394",
+      "P3931",
+      "P3971",
+      "P3427",
+      "P3428"
+    ],
+    "status": "Coordination theme",
+    "source": "AISC liaison report, 9 September 2026"
+  },
+  {
+    "slug": "identity",
+    "title": "Agent identity & delegation",
+    "description": "Represent the principal, the agent, the runtime and the authority behind each action. Explore scoped authorization, revocation and responsibility.",
+    "projects": [
+      "P3394"
+    ],
+    "status": "Coordination theme",
+    "source": "AISC liaison report, 9 September 2026"
+  },
+  {
+    "slug": "semantics",
+    "title": "Semantic interoperability",
+    "description": "Align concepts, tasks, evidence and outcomes using terminology, ontologies, semantic profiles and schema mappings.",
+    "projects": [
+      "P3123",
+      "P3394",
+      "P3427"
+    ],
+    "status": "Coordination theme",
+    "source": "AISC liaison report, 9 September 2026"
+  },
+  {
+    "slug": "observability",
+    "title": "Trust, observability & evidence",
+    "description": "Connect model invocations, delegated actions, tool calls and outcomes to traceable evidence and operational assurance.",
+    "projects": [
+      "P4213",
+      "P3396",
+      "P3395"
+    ],
+    "status": "Coordination theme",
+    "source": "AISC liaison report, 9 September 2026"
+  },
+  {
+    "slug": "genai",
+    "title": "Generative AI lifecycle & governance",
+    "description": "Bring deployment, monitoring, versioning, evaluation, incident response and retirement into one operational lifecycle.",
+    "projects": [
+      "P4211",
+      "2863",
+      "P3511",
+      "P7018"
+    ],
+    "status": "Coordination theme",
+    "source": "AISC liaison report, 9 September 2026"
+  },
+  {
+    "slug": "evaluation",
+    "title": "Evaluation: models to systems",
+    "description": "Extend evaluation to tool-using workflows, persistent tasks, delegated actions and system-level outcomes.",
+    "projects": [
+      "P3419",
+      "P3426",
+      "P3514",
+      "P4126"
+    ],
+    "status": "Coordination theme",
+    "source": "AISC liaison report, 9 September 2026"
+  },
+  {
+    "slug": "portable",
+    "title": "Open & portable AI ecosystems",
+    "description": "Support model independence, transport neutrality, portable sessions and skills, identity continuity and auditable interactions.",
+    "projects": [
+      "P3394",
+      "P3931"
+    ],
+    "status": "Coordination theme",
+    "source": "AISC liaison report, 9 September 2026"
+  },
+  {
+    "slug": "physical",
+    "title": "Edge, distributed & physical AI",
+    "description": "Connect edge-to-cloud execution, cross-platform deployment and manufacturing systems across trust domains.",
+    "projects": [
+      "P2961",
+      "P3142",
+      "P4154",
+      "P4501"
+    ],
+    "status": "Coordination theme",
+    "source": "AISC liaison report, 9 September 2026"
+  }
+]

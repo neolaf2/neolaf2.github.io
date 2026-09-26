@@ -1,0 +1,36 @@
+{
+  "name": "IEEE Computer Society / Artificial Intelligence Standards Committee (C/AISC)",
+  "scope": "AISC develops standards for the governance and practice of artificial intelligence, including machine learning, algorithms, and the use of data.",
+  "officers": [
+    {
+      "name": "Richard Tong",
+      "role": "Chair"
+    },
+    {
+      "name": "Jeanine DeFalco",
+      "role": "Vice Chair"
+    },
+    {
+      "name": "Amy Jiang",
+      "role": "Secretary"
+    },
+    {
+      "name": "George Percivall",
+      "role": "AISC-RSC Chair"
+    },
+    {
+      "name": "Amy Jiang",
+      "role": "GENAI Chair"
+    },
+    {
+      "name": "Christy A. Bahn",
+      "role": "IEEE SA Program Manager"
+    }
+  ],
+  "provenance": {
+    "authority": "IEEE SA",
+    "url": "https://sagroups.ieee.org/ai-sc/",
+    "retrieved": "2026-09-25",
+    "method": "Manual verification"
+  }
+}
